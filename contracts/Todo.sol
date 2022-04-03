@@ -6,6 +6,7 @@ contract Todo {
     uint date;
     string content;
     string author;
+    string password;
     bool done;
     uint dateComplete;
     }
@@ -17,6 +18,7 @@ contract Todo {
         uint date,
         string content,
         string author,
+        string password,
         bool done
     );
     event TaskStatusToggled(
@@ -27,10 +29,11 @@ contract Todo {
 
     function createTask(
         string memory _content,
-        string memory _author)
+        string memory _author,
+        string memory _password)
         external {
-        tasks[nextTaskId] = Task(nextTaskId, block.timestamp, _content, _author, false, 0);
-        emit TaskCreated(nextTaskId, block.timestamp, _content, _author, false);
+        tasks[nextTaskId] = Task(nextTaskId, block.timestamp, _content, _author, _password, false, 0);
+        emit TaskCreated(nextTaskId, block.timestamp, _content, _author, _password, false);
         nextTaskId++;
     }
 

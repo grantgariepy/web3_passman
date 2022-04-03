@@ -13,6 +13,7 @@ function TaskList({tasks, toggleDone}) {
       <td>{formatDate(task.date.toString())}</td>
       <td>{task.content}</td>
       <td>{task.author}</td>
+      <td>{task.password}</td>
       <td>
         <input
           type='checkbox'
@@ -28,7 +29,7 @@ function TaskList({tasks, toggleDone}) {
     <div className="card">
       <div className="row">
         <div className="col-sm-12">
-          <h2 className="orange">Tasks</h2>
+          <h2 className="orange">Usernames and Passwords</h2>
         </div>
       </div>
       <div className="row">
@@ -37,9 +38,10 @@ function TaskList({tasks, toggleDone}) {
             <thead>
               <tr>
                 <th>ID</th>
-                <th>Date</th>
-                <th>Content</th>
-                <th>Author</th>
+                <th>Date Added</th>
+                <th>Name</th>
+                <th>E-mail/Username</th>
+                <th>Password</th>
                 <th>Done</th>
                 <th>Date Complete</th>
               </tr>

@@ -18,8 +18,8 @@ function App() {
      init();
   }, []);
 
-  const createTask = async (content, author) => {
-    const tx = await todo.createTask(content, author)
+  const createTask = async (content, author, password) => {
+    const tx = await todo.createTask(content, author, password)
     await tx.wait();
     const tasks = await todo.getTasks();
     setTasks(tasks);
