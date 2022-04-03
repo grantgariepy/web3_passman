@@ -11,7 +11,7 @@ const getBlockchain = () =>
       provider = new ethers.providers.Web3Provider(provider);
       const signer = provider.getSigner();
       const todo = new Contract(
-        '0xe7f1725E7734CE288F8367e1Bb143E90bb3F0512'
+        'insert contract id here'
         ,Todo.abi,
         signer
       );
