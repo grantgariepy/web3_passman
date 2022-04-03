@@ -43,7 +43,7 @@ contract Todo {
     }
 
     function toggleDone(uint id) external {
-        require(tasks[id].date !== 0, 'task does not exist');
+        require(tasks[id].date != 0, 'task does not exist');
         Task storage task = tasks[id];
         task.done = !task.done;
         task.dateComplete = task.done ? block.timestamp : 0;
